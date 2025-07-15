@@ -111,31 +111,33 @@
     <footer class="page-footer bg-light p-2 mt-5">
 
         
-        <div class="footer-copyright text-center py-3">
-           <span>
-               Copyright &copy; Hirusha Cooray | 
-               <a target="_blank" href="https://github.com/hirushacooray/cpu-scheduling-sim">View Source on Github</a>
-           </span>
-        </div>
-    
-    </footer>
-    <script>
-        function isFacebookApp() {
-            var ua = navigator.userAgent || navigator.vendor || window.opera;
-            return (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1);
-        }
+        <footer>
+  <div class="text-center py-3">
+    <span>
+      &copy; 2025 Samvardhani |
+      <a target="_blank" href="https://github.com/Samvardhani/cpu_scheduling">View Source on GitHub</a>
+    </span>
+  </div>
+</footer>
 
-        function openInBrowser(target, browserScheme) {
-            var ifc = document.createElement("div");
-            ifc.innerHTML = `<iframe src='${browserScheme}${target}' style='width:0;height:0;border:0; border:none;visibility: hidden;'></iframe>`;
-            document.body.appendChild(ifc);
-        }
-        if(isFacebookApp()){
-            // your action here if user using Facebook in-app browser
-            // alert('Are you using Facebook Browser? To get better experience, try press [...] and Open the blog in Chrome or Safari. Thank you!');
-            openInBrowser(window.location.href, "googlechrome://navigate?url=");
-        }
-    </script>
-    
+<script>
+  // Detect if the user is using Facebook In-App Browser
+  function isFacebookApp() {
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+    return (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1);
+  }
+
+  // Attempt to open the site in the system browser
+  function openInBrowser(target, browserScheme) {
+    const iframeContainer = document.createElement("div");
+    iframeContainer.innerHTML = `<iframe src="${browserScheme}${target}" style="width:0;height:0;border:0;visibility:hidden;"></iframe>`;
+    document.body.appendChild(iframeContainer);
+  }
+
+  if (isFacebookApp()) {
+    alert("You are currently using Facebook's in-app browser. For a better experience, please open this site in Chrome or Safari.");
+    openInBrowser(window.location.href, "googlechrome://navigate?url=");
+  }
+</script>
 </body>
 </html>
